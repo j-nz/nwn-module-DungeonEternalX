@@ -1,0 +1,45 @@
+{
+  "language": 0,
+  "entries": [
+    {
+      "id": 0,
+      "text": "Detect Favored Enemies"
+    },
+    {
+      "id": 1,
+      "text": "Sense the types and numbers of your favored enemies within 60 feet."
+    },
+    {
+      "id": 2,
+      "text": "Snare"
+    },
+    {
+      "id": 3,
+      "text": "Creates a magical snare. A creature entering it is entangled until it succeeds on a DC 23 Strength check."
+    },
+    {
+      "id": 4,
+      "text": "Spellslayer Arrow"
+    },
+    {
+      "id": 5,
+      "text": "Fire a spellslaying shot. On a successful attack it deals an extra 1d4 magical damage per level of the highest-level spell effect active on the target."
+    },
+    {
+      "id": 6,
+      "text": "Tree Shape"
+    },
+    {
+      "id": 7,
+      "text": "Assume the appearance of a tree. You become immobile, concealed, and immune to critical hits for one hour per caster level. Cast again to dismiss."
+    },
+    {
+      "id": 8,
+      "text": "Forestfold"
+    },
+    {
+      "id": 9,
+      "text": "Blend with natural surroundings, gaining +20 Hide and +20 Move Silently for ten turns per caster level."
+    }
+  ]
+}

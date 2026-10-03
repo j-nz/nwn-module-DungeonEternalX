@@ -1,0 +1,3 @@
+#include "nwnx_events"
+#include "util_rangerspell"
+void main(){int nSpell=StringToInt(NWNX_Events_GetEventData("SPELL_ID"));if(nSpell!=AI_SPELL_DETECT_FAVORED_ENEMIES&&nSpell!=AI_SPELL_SNARE&&nSpell!=AI_SPELL_SPELLSLAYER_ARROW&&nSpell!=AI_SPELL_TREESHAPE&&nSpell!=AI_SPELL_FORESTFOLD)return;if(NWNX_Events_GetCurrentEvent()==NWNX_ON_CAST_SPELL_BEFORE&&nSpell==AI_SPELL_SPELLSLAYER_ARROW&&!AI_CanCastSpellslayerArrow(OBJECT_SELF)){SendMessageToPC(OBJECT_SELF,"Spellslayer Arrow requires a bow or crossbow with ammunition.");NWNX_Events_SkipEvent();return;}SetLocalInt(OBJECT_SELF,"AI_LAST_CUSTOM_SPELL",nSpell);}

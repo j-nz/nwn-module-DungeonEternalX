@@ -1,0 +1,2 @@
+#include "util_rangerspell"
+void main(){if(!X2PreSpellCastCode())return;object oPC=OBJECT_SELF;location lLoc=GetSpellTargetLocation();AssignCommand(oPC,ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW,1.0f,1.0f));ApplyEffectAtLocation(DURATION_TYPE_PERMANENT,EffectAreaOfEffect(AI_VFX_PER_SNARE),lLoc);DelayCommand(1.0f,ApplyEffectAtLocation(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_IMP_AC_BONUS),lLoc));}

@@ -1,0 +1,3 @@
+#include "util_rangerspell"
+#include "inc_attacks"
+void main(){if(!X2PreSpellCastCode())return;object oPC=OBJECT_SELF;object oTarget=GetSpellTargetObject();if(!GetIsObjectValid(oTarget))return;if(!AI_CanCastSpellslayerArrow(oPC)){SendMessageToPC(oPC,"Spellslayer Arrow requires a bow or crossbow with ammunition.");return;}int nHit=DoAttackRoll(oTarget,"Right",oPC,FALSE);AssignCommand(oPC,ActionAttack(oTarget));if(nHit<=0)return;int nHighest=AI_GetHighestActiveSpellLevel(oTarget);if(nHighest<1)return;int nDamage=d4(nHighest);ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectDamage(nDamage,DAMAGE_TYPE_MAGICAL,DAMAGE_POWER_ENERGY),oTarget);ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectVisualEffect(VFX_IMP_DISPEL),oTarget);}

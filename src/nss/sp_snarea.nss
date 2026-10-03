@@ -1,0 +1,3 @@
+#include "util_rangerspell"
+void AI_SnareStrengthCheck(object oTarget){if(!GetIsObjectValid(oTarget)||GetIsDead(oTarget))return;int nRoll=d20()+GetAbilityModifier(ABILITY_STRENGTH,oTarget);if(GetIsPC(oTarget))SendMessageToPC(oTarget,"Snare Strength check vs DC 23: "+IntToString(nRoll));if(nRoll>=23){AI_RemoveTaggedEffects(oTarget,"AI_SNARE");return;}DelayCommand(6.0f,AI_SnareStrengthCheck(oTarget));}
+void main(){object oTarget=GetEnteringObject();object oCreator=GetAreaOfEffectCreator();if(!GetIsObjectValid(oTarget)||oTarget==oCreator)return;effect e=EffectLinkEffects(EffectEntangle(),EffectVisualEffect(VFX_DUR_ENTANGLE));e=TagEffect(e,"AI_SNARE");ApplyEffectToObject(DURATION_TYPE_PERMANENT,e,oTarget);DestroyObject(OBJECT_SELF);AI_SnareStrengthCheck(oTarget);}
