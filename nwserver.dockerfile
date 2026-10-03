@@ -91,3 +91,6 @@ ENV NWN_RELOADWHENEMPTY=${NWN_RELOADWHENEMPTY}
 ARG NWN_SERVERVAULT
 ENV NWN_SERVERVAULT=${NWN_SERVERVAULT} 
 COPY $CI_PROJECT_DIR/DungeonEternalX.mod /nwn/data/data/mod/DungeonEternalX.mod
+
+COPY $CI_PROJECT_DIR/ascension_prc.hak /nwn/data/hak/ascension_prc.hak
+COPY $CI_PROJECT_DIR/ascension_prc.tlk /nwn/data/tlk/ascension_prc.tlk

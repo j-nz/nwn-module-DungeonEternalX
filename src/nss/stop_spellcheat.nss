@@ -1,6 +1,7 @@
 #include "x2_inc_switches"
 #include "_functions"
 #include "db_inc"
+#include "util_rangerspell"
 
 int i;
 
@@ -74,7 +75,8 @@ void SpellStack(int iSpell, object oPC)
         iSpell == SPELL_GREASE                  ||        iSpell == SPELL_MIND_FOG                ||
         iSpell == SPELL_STINKING_CLOUD          ||        iSpell == SPELL_STONEHOLD               ||
         iSpell == SPELL_WALL_OF_FIRE            ||        iSpell == SPELL_INCENDIARY_CLOUD        ||
-        iSpell == SPELL_WEB                     ||        iSpell == SPELL_HORRID_WILTING)
+        iSpell == SPELL_WEB                     ||        iSpell == SPELL_HORRID_WILTING ||
+        iSpell == AI_SPELL_SNARE)
     {
         /*int nStack = GetLocalInt(oPC, "ls_spellstack");//GetPersistentInt(oPC, "ls_spellstack");
         int nStackLimit = 3;

@@ -6,6 +6,8 @@ Test Prod Module:
   only:
     changes:
       - src/**/*
+      - hak/**/*
+      - tlk/**/*
   only:
   - master
 
@@ -20,16 +22,22 @@ Build Prod Module:
     - "nasher config --nssFlags:'-n /nwn/data -o'"
     - nasher pack
     - cp $MODULE_NAME $CI_PROJECT_DIR/$MODULE_NAME
+    - cd hak && nasher pack && cp ascension_prc.hak $CI_PROJECT_DIR/ascension_prc.hak && cd ..
+    - cd tlk && nasher pack && cp ascension_prc.tlk $CI_PROJECT_DIR/ascension_prc.tlk && cd ..
   only:
     changes:
       - nwserver.dockerfile
       - nasher.cfg
       - src/**/*
+      - hak/**/*
+      - tlk/**/*
   only:
   - master
   artifacts:
     paths:
       - $MODULE_NAME
+      - ascension_prc.hak
+      - ascension_prc.tlk
     expire_in: 1 week
 
 Deploy Prod Module:
@@ -89,5 +97,7 @@ Deploy Prod Module:
       - nwserver.dockerfile
       - nasher.cfg
       - src/**/*
+      - hak/**/*
+      - tlk/**/*
   only:
   - master

@@ -90,6 +90,8 @@ void main() {
 
     // event 429 handler
     NWNX_Events_SubscribeEvent("NWNX_ON_WEBHOOK_FAILED", "_event_webhook");
+    NWNX_Events_SubscribeEvent(NWNX_ON_CAST_SPELL_BEFORE, "_event_prcspell");
+    NWNX_Events_SubscribeEvent(NWNX_ON_CAST_SPELL_AFTER, "_event_prcspell");
 
     // set chat script
     NWNX_Chat_RegisterChatScript("_mod_player_chat");
@@ -170,7 +172,7 @@ void main() {
     SetModuleSwitch(MODULE_SWITCH_ENABLE_TAGBASED_SCRIPTS, TRUE);
 
     // override spellscript
-    SetModuleOverrideSpellscript("stop_spellcheat");
+    SetModuleOverrideSpellscript("_mod_spell_hooks");
 
     // TODO Timezones?
     string sTimeZone = "Reboot Time of six hours.";

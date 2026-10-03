@@ -1461,7 +1461,7 @@
   },
   "Mod_CustomTlk": {
     "type": "cexostring",
-    "value": ""
+    "value": "ascension_prc"
   },
   "Mod_CutSceneList": {
     "type": "list",
@@ -1487,23 +1487,23 @@
   },
   "Mod_Entry_Dir_X": {
     "type": "float",
-    "value": 0.0
+    "value": 0
   },
   "Mod_Entry_Dir_Y": {
     "type": "float",
-    "value": 1.0
+    "value": 1
   },
   "Mod_Entry_X": {
     "type": "float",
-    "value": 14.0
+    "value": 14
   },
   "Mod_Entry_Y": {
     "type": "float",
-    "value": 15.0
+    "value": 15
   },
   "Mod_Entry_Z": {
     "type": "float",
-    "value": 0.0
+    "value": 0
   },
   "Mod_Expan_List": {
     "type": "list",
@@ -1515,7 +1515,15 @@
   },
   "Mod_HakList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 8,
+        "Mod_Hak": {
+          "type": "cexostring",
+          "value": "ascension_prc"
+        }
+      }
+    ]
   },
   "Mod_IsSaveGame": {
     "type": "byte",
