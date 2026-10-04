@@ -1,0 +1,22 @@
+name: Hak resource policy
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-hak-resources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject scripts and debug data in hak sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          forbidden="$(find hak -type f \( -iname '*.nss' -o -iname '*.ncs' -o -iname '*.ndb' \) -print 2>/dev/null || true)"
+          if [ -n "$forbidden" ]; then
+            echo "Hak resource policy violation: NWScript source/compiled/debug files must not live under hak/."
+            echo "$forbidden"
+            exit 1
+          fi
+          echo "Hak resource policy OK."
